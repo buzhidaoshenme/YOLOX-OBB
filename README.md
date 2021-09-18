@@ -29,3 +29,17 @@ cd apex
 pip install -v --no-cache-dir ./
 cd -
 ```
+## Data Preparation
+1. Split images and annotations(You can refer to [DOTA_devkit_YOLO](https://github.com/hukaixuan19970627/DOTA_devkit_YOLO))
+```shell
+ python ImgSplit_multi_process.py
+ ```
+ 2. Transform annotations into voc-like format
+ 
+ * `This is a object in voc-like format annotation:`
+ <img src="assets/voc-like.png" width="1000" >
+ 
+ ```shell
+ python custom tools/DOTA2VOC_obb.py
+ ```
+ 
