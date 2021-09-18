@@ -84,3 +84,14 @@ python DOTA_devkit_YOLO/ResultMerge.py
 ```
 python DOTA_devkit_YOLO/dota_v1.5_evaluation_task1.py(You can refer to [DOTA_devkit_YOLO](https://github.com/hukaixuan19970627/DOTA_devkit_YOLO))
 ```
+## Unfortunately 
+This implementation only get 0.563 mAP@0.5 on DOTA v1.0.
+
+## Reference
+[YOLOX](https://github.com/Megvii-BaseDetection/YOLOX)
+
+[DOTA_devkit_YOLO](https://github.com/hukaixuan19970627/DOTA_devkit_YOLO)
+
+[YOLOv5_DOTA_OBB](https://github.com/hukaixuan19970627/YOLOv5_DOTA_OBB)
+
+[RotationDetection](https://github.com/yangxue0827/RotationDetection)
