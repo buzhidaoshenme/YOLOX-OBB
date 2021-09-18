@@ -61,7 +61,7 @@ cd -
 ## Train 
 1. Modify configs
 
-change the data path with yours in [yolox_dota_s_obb_kld.py](https://github.com/buzhidaoshenme/YOLOX-OBB/blob/main/exps/example/yolox_voc/yolox_dota_s_obb_kld.py)
+　change the data path with yours in [yolox_dota_s_obb_kld.py](https://github.com/buzhidaoshenme/YOLOX-OBB/blob/main/exps/example/yolox_voc/yolox_dota_s_obb_kld.py)
 ```
 data_dir = 'your_data_path'
 ```
@@ -74,7 +74,8 @@ CUDA_VISIBLE_DEVICES=0,1 python3 tools/train.py -f exps/example/yolox_voc/yolox_
 ```
 CUDA_VISIBLE_DEVICES=0,1 python tools/eval.py -f exps/example/yolox_voc/yolox_dota_s_obb_kld.py -d 2 -b 16 -c YOLOX_outputs/yolox_dota_s_obb_kld/latest_ckpt.pth
 ```
-Results will be save to your_data/results/VOC2012/Main
+　Results will be save to your_data/results/VOC2012/Main
+
 2. Merge results(You can refer to [DOTA_devkit_YOLO](https://github.com/hukaixuan19970627/DOTA_devkit_YOLO))
 ```
 python DOTA_devkit_YOLO/ResultMerge.py
