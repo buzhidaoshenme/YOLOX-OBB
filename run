@@ -1,0 +1,21 @@
+
+## train ##
+CUDA_VISIBLE_DEVICES=0,1 python3 tools/train.py -f exps/example/yolox_voc/yolox_dota_s_obb_kld.py -d 2 -b 16 --fp16 -c weights/yolox_s.pth.tar
+
+## resume ##
+CUDA_VISIBLE_DEVICES=0,1 python3 tools/train.py -f exps/example/yolox_voc/yolox_dota_s_obb_kld.py -d 2 -b 16 --fp16 --resume -c /home/lyy/gxw/YOLOX/YOLOX_outputs/yolox_dota_s_obb_kld/latest_ckpt.pth
+
+## val ##
+# save results as voc format only
+CUDA_VISIBLE_DEVICES=0,1 python tools/eval.py -f exps/example/yolox_voc/yolox_dota_s_obb_kld.py -d 2 -b 16 -c /home/lyy/gxw/YOLOX/YOLOX_outputs/yolox_dota_s_obb_kld/latest_ckpt.pth
+
+## test ##
+# save results as voc format only (you must comment line 151 and uncomment line 152 in YOLOXOBB/yolox/data/datasets/dota_obb.py )
+CUDA_VISIBLE_DEVICES=0,1 python tools/eval.py -f exps/example/yolox_voc/yolox_dota_s_obb_kld.py -d 2 -b 16 -c /home/lyy/gxw/YOLOX/YOLOX_outputs/yolox_dota_s_obb_kld/latest_ckpt.pth
+
+
+## demo ##
+CUDA_VISIBLE_DEVICES=0 python tools/demo_obb.py image -f exps/example/yolox_voc/yolox_dota_s_obb_kld.py -c /home/lyy/gxw/YOLOX/YOLOX_outputs/yolox_dota_s_obb_kld/latest_ckpt.pth --path assets/demo --conf 0.5 --nms 0.65 --tsize 1024 --save_result --device gpu
+
+
+CUDA_VISIBLE_DEVICES=1 python tools/eval.py -f exps/example/yolox_voc/yolox_dota_s_obb_kld.py -d 1 -b 1 -c /home/lyy/gxw/YOLOX/YOLOX_outputs/yolox_dota_s_obb_kld/latest_ckpt.pth
