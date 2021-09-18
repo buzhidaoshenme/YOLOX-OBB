@@ -77,9 +77,9 @@ CUDA_VISIBLE_DEVICES=0,1 python tools/eval.py -f exps/example/yolox_voc/yolox_do
 Results will be save to your_data/results/VOC2012/Main
 2. Merge results(You can refer to [DOTA_devkit_YOLO](https://github.com/hukaixuan19970627/DOTA_devkit_YOLO))
 ```
-python ResultMerge.py
+python DOTA_devkit_YOLO/ResultMerge.py
 ```
 3. Evaluation
 ```
-python dota_v1.5_evaluation_task1.py(You can refer to [DOTA_devkit_YOLO](https://github.com/hukaixuan19970627/DOTA_devkit_YOLO))
+python DOTA_devkit_YOLO/dota_v1.5_evaluation_task1.py(You can refer to [DOTA_devkit_YOLO](https://github.com/hukaixuan19970627/DOTA_devkit_YOLO))
 ```
