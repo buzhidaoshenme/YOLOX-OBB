@@ -279,7 +279,7 @@ if __name__ == '__main__':
         # 读取对应的样本图片，得到H,W,D用于书写xml
 
         # 书写xml
-        #writeXml(anno_new_path, picname, W, H, D, boxes, hbb=True)
+        writeXml(anno_new_path, picname, W, H, D, boxes, hbb=False)
         print('正在处理%s' % filename)
 
         # ## draw picture
@@ -296,28 +296,28 @@ if __name__ == '__main__':
         # cv2.waitKey(2000)
 
 
-        for bbox in boxes:
-            xmin, ymin, xmax, ymax, angle = bbox[0:5]
-            w = xmax - xmin
-            h = ymax - ymin
-            x_c = (xmin+xmax) / 2
-            y_c = (ymin+ymax) / 2
-            if -90 < angle <= 0:
-                h, w = w, h
-                angle = angle + 90.0
-            if angle == -90.0:
-                angle = angle + 180
-            ret = [[x_c, y_c], [w, h], angle]
-            box = cv2.boxPoints(ret)
-            box = np.int0(box)
-            [x1, y1], [x2, y2], [x3, y3], [x4, y4] = box
-            cv2.line(im, (x1, y1), (x2, y2), (0, 255, 255), 2, cv2.LINE_AA)
-            cv2.line(im, (x2, y2), (x3, y3), (0, 255, 255), 2, cv2.LINE_AA)
-            cv2.line(im, (x3, y3), (x4, y4), (0, 255, 255), 2, cv2.LINE_AA)
-            cv2.line(im, (x4, y4), (x1, y1), (0, 255, 255), 2, cv2.LINE_AA)
-        cv2.imshow('dst', im)
-        cv2.waitKey(0)
-        break
+        # for bbox in boxes:
+        #     xmin, ymin, xmax, ymax, angle = bbox[0:5]
+        #     w = xmax - xmin
+        #     h = ymax - ymin
+        #     x_c = (xmin+xmax) / 2
+        #     y_c = (ymin+ymax) / 2
+        #     if -90 < angle <= 0:
+        #         h, w = w, h
+        #         angle = angle + 90.0
+        #     if angle == -90.0:
+        #         angle = angle + 180
+        #     ret = [[x_c, y_c], [w, h], angle]
+        #     box = cv2.boxPoints(ret)
+        #     box = np.int0(box)
+        #     [x1, y1], [x2, y2], [x3, y3], [x4, y4] = box
+        #     cv2.line(im, (x1, y1), (x2, y2), (0, 255, 255), 2, cv2.LINE_AA)
+        #     cv2.line(im, (x2, y2), (x3, y3), (0, 255, 255), 2, cv2.LINE_AA)
+        #     cv2.line(im, (x3, y3), (x4, y4), (0, 255, 255), 2, cv2.LINE_AA)
+        #     cv2.line(im, (x4, y4), (x1, y1), (0, 255, 255), 2, cv2.LINE_AA)
+        # cv2.imshow('dst', im)
+        # cv2.waitKey(0)
+        # break
 
 
 
