@@ -12,6 +12,7 @@ class Exp(MyExp):
     def __init__(self):
         super(Exp, self).__init__()
         self.input_size = (1024, 1024) #add
+        self.random_size = (28, 36)
         self.num_classes = 16
         self.depth = 0.33
         self.width = 0.50
@@ -30,7 +31,7 @@ class Exp(MyExp):
         self.warmup_epochs = 5
         self.max_epoch = 50
         self.warmup_lr = 0
-        self.basic_lr_per_img = 0.005 / 16.0
+        self.basic_lr_per_img = 0.0025 / 16.0
         self.scheduler = "yoloxwarmcos"
         self.no_aug_epochs = 15
         self.min_lr_ratio = 0.05
