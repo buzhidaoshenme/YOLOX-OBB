@@ -34,8 +34,8 @@ def readlabeltxt(txtpath, height, width, hbb=True):
         boxes = []
         rects = []
         for i, splitline in enumerate(splitlines):
-            if i in [0, 1]:  # DOTA数据集前两行对于我们来说是无用的
-                continue
+            #if i in [0, 1]:  # DOTA数据集前两行对于我们来说是无用的
+                #continue
             label = splitline[8]
             #if label not in category_set:  # 只书写制定的类别
                 #continue
