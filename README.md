@@ -88,7 +88,7 @@ python DOTA_devkit_YOLO/dota_v1.5_evaluation_task1.py(You can refer to [DOTA_dev
  * `If test, you should upload your results to DOTA Evaluation Server.`
 
 ## Unfortunately 
-This implementation only get 0.563 mAP@0.5 on DOTA v1.0.
+This implementation only get 0.712 mAP@0.5 on DOTA v1.0.
 
 ## Reference
 [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX)
